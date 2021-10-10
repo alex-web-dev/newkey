@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontFamily, sans-serif;
+}
+
+.wrapper {
+  max-width: $wrapperWidth;
+  margin: 0 auto;
+  padding: 0 $wrapperPadding
+}
+
+a {
+  text-decoration: none;
+}
