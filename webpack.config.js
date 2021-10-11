@@ -125,7 +125,7 @@ let conf = {
 				loader: 'url-loader',
 				// loader: 'file-loader',
 				options: { 
-					limit: 38000,
+					limit: 2500,
 					// name: 'images/[name].[ext]',
 				}
 			},

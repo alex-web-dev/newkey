@@ -6,7 +6,6 @@
 
 body {
     background-image: url('../images/bg.png');
-    // background-image: url('file:///D://Sites/newkey/dist/images/bg.png');
 }
 
 .title1,
@@ -617,7 +616,7 @@ body {
 }
 
 .slides {
-    padding: 50px 50px 0;
+    padding: 50px 0 0 50px;
 
     &__title1 {
         max-width: 760px;

@@ -96,12 +96,19 @@ const slider = new Swiper('.slides__list', {
     renderBullet: function (index, className) {
       return '<span class="' + className + '">' + (menu[index]) + '</span>';
     }
-    
   },
   scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
-  },scrollbarHide: false
+  },
+  breakpoints: {
+    992: {
+      direction: 'vertical',
+    },
+    320: {
+      direction: 'horizontal',
+    }
+  }
 });
 
 const slidesAll = document.querySelector('.slides__total');
