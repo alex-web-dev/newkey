@@ -620,6 +620,7 @@ body {
 
     &__title1 {
         max-width: 760px;
+        padding: 0 30px;
     }
 
     &__list {
@@ -719,6 +720,13 @@ body {
         opacity: 1;
         box-shadow: 0 9px 15px rgba(29, 132, 62, .3);
     }
+
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        font-size: 16px;
+        color: #000;
+        font-weight: 700;
+    }
     
 }
 
@@ -767,6 +775,7 @@ body {
     &__img {
         display: block;
         margin: 0 auto;
+        height: auto;
     }
 
     &__item {
@@ -804,14 +813,13 @@ body {
 }
 
 .cards {
-    padding-top: 100px;
+    padding: 100px 28px 0;
 
     &__title2 {
         margin-bottom: 55px;
     }
 
     &__list {
-        padding: 0 28px;
         justify-content: center;
     }
 }
@@ -827,6 +835,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &__img {
+        height: auto;
+    }
 
     &__name {
         margin-top: 50px;
@@ -873,7 +885,7 @@ body {
         top: 0;
         left: 0;
         z-index: 1;
-        border-radius: 8px;
+        border-radius: 16px;
     }
 
     &:hover:after {
@@ -882,6 +894,7 @@ body {
 
     &__img {
         margin-top: 10px;
+        height: auto;
     }
 
     &__type {

@@ -101,8 +101,12 @@ const slider = new Swiper('.slides__list', {
     el: '.swiper-scrollbar',
     draggable: true,
   },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
   breakpoints: {
-    992: {
+    993: {
       direction: 'vertical',
     },
     320: {

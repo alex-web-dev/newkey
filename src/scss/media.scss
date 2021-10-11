@@ -10,6 +10,11 @@
     .slides__img {
         max-width: 70%;
     }
+
+    .message {
+        font-size: 36px;
+        line-height: 48px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -227,6 +232,54 @@
            padding: 18px;
        }
     }
+
+    .message {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .scopes {
+        &__message {
+            padding-left: 0;
+        }
+    }
+
+    .category {
+        &__name {
+            font-size: 18px;
+            line-height: 23px;
+        }
+    }
+
+    .callback {
+        padding: 80px 30px 40px;
+
+        &__title2 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        &__text {
+            margin-top: 28px;
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        &__content {
+            padding: 33px;
+        }
+
+        &__message {
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+
+    .cb-form {
+        &__submit {
+            margin-top: 10px;
+        }
+    }
 }
 
 @media (max-width: 1100px) {
@@ -250,6 +303,12 @@
 }
 
 @media (max-width: 992px) {
+    .title1 {
+        text-align: center;
+        font-size: 28px;
+        line-height: 35px;
+    }
+
     .logo {
         width: 173px;
     }
@@ -265,7 +324,11 @@
     }
 
     .slides {
+        padding: 40px 40px 0;
+
         &__list {
+            margin-top: 10px;
+            padding-bottom: 25px;
             height: auto;
         }
 
@@ -278,13 +341,27 @@
             display: none;
         }
 
+        &__controls {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .swiper-pagination {
+            position: static;
             display: flex;
             justify-content: center;
-            top: initial;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            width: auto;
+            margin: 0 15px;
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            position: static;
+            margin: 0;
         }
 
         .swiper-pagination-bullet {
@@ -293,14 +370,78 @@
             height: 14px;
             border-radius: 50%;
             border: 2px solid $color-primary;
-            margin: 0 12px 0 0 !important;
             display: block;
+
+            &:not(:last-child) {
+                margin: 0 12px 0 0 !important;
+            }
+
+            &:last-child {
+                margin: 0 !important;
+            }
         }
 
         .swiper-pagination-bullet-active {
             padding: 0;
             box-shadow: none;
         }
+    }
+
+    .scopes {
+        padding-top: 60px;
+
+        &__title2 {
+            margin-bottom: 20px;
+        }
+
+        &__list {
+            order: 2;
+        }
+
+        &__item {
+            margin: 30px 0;
+        }
+
+        &__message {
+            text-align: center;
+        }
+
+        &__btn {
+            margin-top: 40px;
+        }
+    }
+
+    .card {
+        padding: 30px 20px;
+        
+        &__img {
+            max-width: 220px;
+        }
+
+        &__name {
+            font-size: 22px;
+            line-height: 25px;
+            margin-top: 40px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 21px;
+        }
+
+        &__btn {
+            width: 210px;
+        }
+    }
+
+    .callback {
+        &__text {
+
+        }
+    }
+
+    .cb-form {
+        max-width: 390px;
     }
 }
 
@@ -333,7 +474,6 @@
 
     .header {
         &__top {
-            padding-bottom: 17px;
             justify-content: flex-start;
         }
 
@@ -358,12 +498,171 @@
             display: none;
         }
     }
+
+    .main {
+        &__content {
+            margin: 0 -12px;
+        }
+    }
+
+    .single-category {
+        text-align: center;
+
+        &__inf {
+            order: 2;
+        }
+
+        &__title {
+            margin-top: 50px;
+            font-size: 28px;
+            line-height: 35px;
+        }
+
+        &__text {
+            margin-top: 25px;
+        }
+    }
 }
 
 @media (max-width: 480px) {
+    .title1 {
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .title2 {
+        font-size: 28px;
+        line-height: 35px;
+    }
+
+    .title3 {
+        font-size: 18px;
+        line-height: 23px;
+    }
+
+    .text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .header {
+        height: 120px;
+
+        &__top-content {
+            padding-top: 15px;
+        }
+
+        &__bottom-content {
+            padding-top: 5px;
+        }
+
+        &_reduced {
+            height: 71px;
+        }
+    }
+
     .menu {
         &__cart-btn {
             margin-left: 35px;
+        }
+    }
+
+    .slides {
+        padding: 25px 0 0;
+    }
+
+    .breadcrumb {
+        padding: 15px 20px 0;
+    }
+
+    .features {
+        padding-top: 45px;
+
+        &__name {
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    .message {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .scopes {
+        padding: 45px 15px 0;
+
+        &__item {
+            margin: 25px 0;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        &__item-inf {
+            margin-left: 0;
+            margin-top: 15px;
+        }
+
+        &__item-text {
+            font-size: 16px;
+            line-height: 26px;
+        }
+
+        &__img {
+            max-width: 210px;
+        }
+
+        &__btn {
+            margin-top: 35px;
+        }
+    }
+
+    .cards {
+        padding: 60px 20px 0;
+
+        &__title2 {
+            margin-bottom: 40px;
+        }
+    }
+
+    .card {
+        &__name {
+            margin-top: 10px;
+        }
+
+        &__text {
+            margin-bottom: 30px;
+        }
+    }
+
+    .categories {
+        padding: 60px 40px 0;
+    }
+
+    .category {
+        &__img {
+            max-width: 144px;
+        }
+    }
+
+    .single-category {
+        padding: 55px 27px 0;
+
+        &__title {
+            margin-top: 40px;
+            font-size: 28px;
+            line-height: 35px;
+        }
+
+        &__text {
+            font-size: 16px;
+            line-height: 20px;
         }
     }
 }
