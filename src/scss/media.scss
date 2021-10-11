@@ -209,7 +209,7 @@
         &__contact {
             font-size: 18px;
 
-            &_instagram {
+            &.contact_instagram {
                 span {
                     display: none;
                 }
@@ -221,7 +221,7 @@
 @media (max-width: 1100px) {
     .header {
         &__contact {
-            &_email {
+            &.contact_email {
                 span {
                     display: none;
                 }
@@ -245,7 +245,7 @@
 
     .header {
         &__contact {
-            &_phone {
+            &.contact_phone {
                 span {
                     display: none;
                 }
@@ -295,7 +295,7 @@
                 margin-right: 0;
             }
 
-            &_phone {
+            &.contact_phone {
                 margin-left: 30px;
             }
         }

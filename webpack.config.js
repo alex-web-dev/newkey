@@ -49,8 +49,8 @@ const plugins = () => {
 			}
 		}),
 		new HTMLWebpackPlugin({
-      filename: 'test.html',
-      template: 'src/test.html'
+      filename: 'autom.html',
+      template: 'src/autom.html'
     }),
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
@@ -101,7 +101,7 @@ let conf = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: path.resolve(__dirname, 'dist') 
+              publicPath: '/dist' 
             },
           },
 					'css-loader'
@@ -113,7 +113,7 @@ let conf = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: path.resolve(__dirname, 'dist') 
+              publicPath: '/dist' 
             },
           },
 					'css-loader',
@@ -122,10 +122,11 @@ let conf = {
 			},
 			{
 				test: /\.(png|jpg|svg|webp)$/,
-				loader: 'file-loader',
+				loader: 'url-loader',
+				// loader: 'file-loader',
 				options: { 
 					limit: 38000,
-					name: 'images/[name].[ext]',
+					// name: 'images/[name].[ext]',
 				}
 			},
 			{

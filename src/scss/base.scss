@@ -2,8 +2,14 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: $fontFamily, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
