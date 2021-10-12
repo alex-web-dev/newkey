@@ -6,6 +6,7 @@
 
 body {
     background-image: url('../images/bg.png');
+    background-attachment: fixed;
 }
 
 .title1,
@@ -500,6 +501,10 @@ body {
             display: none;
         }
     }
+}
+
+.link {
+    color: $color-primary;
 }
 
 .search-field {
@@ -1207,34 +1212,29 @@ body {
 
 .breadcrumb {
     display: flex;
-    color: #666666;
+    align-items: center;
+    color: #000000;
     padding: 30px 50px 0;
 
     &__link {
-        color: #666666;
-        font-size: 14px;
+        color: $color-primary;
+        font-size: 18px;
+        line-height: 23px;
+        font-weight: 700;
         position: relative;
 
-        &:not(:last-child) {
-            padding-right: 12px;
-            margin-right: 12px;
+        &[href] {
+            color: #000000;
 
-            &:after {
-                content: '';
-                border: solid #666666;
-                border-width: 0 1px 1px 0;
-                display: inline-block;
-                padding: 2.3px;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%) rotate(-45deg);
-                right: 0;
+            &:hover {
+                text-decoration: underline;
             }
         }
+    }
 
-        &[href]:hover {
-            text-decoration: underline;
-        }
+    &__separator {
+        margin: 0 8px;
+        font-weight: 700;
     }
 }
 
@@ -1283,6 +1283,56 @@ body {
             transform: translateY(-50%);
             background: url('../images/icons/tip.png') center center no-repeat;
             background-size: 100%;
+        }
+    }
+}
+
+.price-list {
+    padding: 0 50px;
+
+    &__text {
+        margin-top: 20px;
+        text-align: right;
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.price-item {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 30px;
+
+    &__table {
+        border-top: solid 1px #CCCCCC;
+        border-left: solid 1px #CCCCCC;
+        border-collapse: collapse;
+        margin-left: 30px;
+        color: #333;
+
+        th {
+            font-weight: 400;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border-bottom: solid 1px #CCCCCC;
+            border-right: solid 1px #CCCCCC;
+        }
+
+        th.center,
+        td.center {
+            text-align: center;
+        }
+
+        th.right,
+        td.right {
+            text-align: right;
         }
     }
 }

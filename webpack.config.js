@@ -61,8 +61,8 @@ const plugins = () => {
       template: 'src/catalog.html'
     }),
 		new HTMLWebpackPlugin({
-      filename: 'products.html',
-      template: 'src/products.html'
+      filename: 'pricelist.html',
+      template: 'src/pricelist.html'
     }),
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
