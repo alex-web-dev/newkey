@@ -27,6 +27,10 @@ body {
     font-size: 44px;
     line-height: 56px;
     text-align: center;
+
+    &_primary {
+        color: $color-primary;
+    }
 }
 
 .title3 {
@@ -52,6 +56,7 @@ body {
     font-weight: 700;
     transition: background .3s;
     display: inline-block;
+    text-align: center;
 
     &:hover {
         background: #359d56;
@@ -566,7 +571,7 @@ body {
 }
 
 .contact {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     color: $color-primary;
     font-size: 22px;
@@ -575,6 +580,7 @@ body {
 
     svg {
         margin-right: 13px;
+        flex: 0 0 auto;
     }
 
     path {
@@ -601,6 +607,21 @@ body {
             path {
                 stroke: none;
                 fill: $color-secondary;
+            }
+        }
+    }
+
+    &_address {
+        color: #000;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 30px;
+
+        &:hover {
+            color: #000;
+    
+            path {
+                stroke: $color-primary;
             }
         }
     }
@@ -869,7 +890,18 @@ body {
 }
 
 .categories {
-    padding: 100px 50px 0;
+    padding: 50px 50px 0;
+
+    &__btn {
+        margin: 50px auto 0;
+        padding: 13px 20px;
+        display: block;
+        position: relative;
+        width: 350px;
+        max-width: 100%;
+        font-size: 30px;
+        line-height: 38px;
+    }
 }
 
 .category {
@@ -879,8 +911,9 @@ body {
     background: #fff;
     border-radius: 16px;
     box-shadow: -12px 12px 24px rgba(224, 230, 224, 0.2), 12px -12px 24px rgba(224, 230, 224, 0.2), -12px -12px 24px rgba(255, 255, 255, 0.9), 12px 12px 30px rgba(224, 230, 224, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(224, 230, 224, 0.5);
-    padding: 15px 30px;
+    padding: 20px;
     text-align: center;
+    border: 1px solid #D3D3D3;
 
     &:after {
         content: '';
@@ -898,13 +931,20 @@ body {
         background: rgba(0, 0, 0, 0);
     }
 
+    &__name {
+        white-space: nowrap;
+        color: $color-primary;
+    }
+
     &__img {
         margin-top: 10px;
-        height: auto;
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
     }
 
     &__type {
-        color: #000;
+        color: $color-primary;
         font-size: 18px;
         line-height: 23px;
         font-weight: 300;
@@ -1182,6 +1222,55 @@ body {
 
         &[href]:hover {
             text-decoration: underline;
+        }
+    }
+}
+
+.contacts {
+    padding: 55px 50px 40px;
+
+    &__title2 {
+        margin-bottom: 25px;
+    }
+
+    &__map {
+        height: 420px;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+
+    &__name {
+        font-size: 36px;
+        line-height: 45px;
+        font-weight: 700;
+        margin: 20px 0 15px;
+    }
+
+    &__contact {
+        &.contact_phone,
+        &.contact_email {
+            font-size: 36px;
+            line-height: 45px;
+        }
+    }
+
+    &__tip {
+        margin-top: 50px;
+        font-size: 24px;
+        line-height: 30px;
+        position: relative;
+        padding-left: 70px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 52px;
+            height: 52px;
+            transform: translateY(-50%);
+            background: url('../images/icons/tip.png') center center no-repeat;
+            background-size: 100%;
         }
     }
 }

@@ -259,6 +259,14 @@
         }
     }
 
+    .categories {
+        &__btn {
+            font-size: 22px;
+            line-height: 28px;
+            width: 236px;
+        }
+    }
+
     .category {
         &__name {
             font-size: 18px;
@@ -304,6 +312,29 @@
         &__copyright {
             font-size: 18px;
             line-height: 23px;
+        }
+    }
+
+    .contacts {
+        padding-left: 33px;
+        padding-right: 33px;
+
+        &__name,
+        &__contact.contact_phone,
+        &__contact.contact_email {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        &__contact.contact_address {
+            font-size: 18px;
+            line-height: 23px;
+        }
+
+        &__tip {
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
@@ -507,6 +538,44 @@
         &__privacy {
             font-size: 18px;
             line-height: 23px;
+        }
+    }
+
+    .contacts {
+        &__inf {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: space-around;
+        }
+
+        &__item {
+            &_address {
+                width: 100%;
+            }
+        }
+
+        &__name {
+            margin-bottom: 10px;
+        }
+
+        &__contact.contact_address {
+            font-size: 14px;
+            line-height: 18px;
+            justify-content: center;
+        }
+
+        &__map {
+            margin: 20px auto 0;
+            height: 230px;
+            max-width: 340px;
+        }
+
+        &__tip {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 23px;
+            max-width: 480px;
         }
     }
 }
@@ -757,12 +826,12 @@
     }
 
     .categories {
-        padding: 60px 40px 0;
+        padding: 40px 40px 0;
     }
 
     .category {
         &__img {
-            max-width: 144px;
+            height: 160px;
         }
     }
 
@@ -840,9 +909,39 @@
     }
 
     .footer {
-        &__copyright {
+        &__copyright,
+        &__privacy {
             font-size: 14px;
             line-height: 18px;
+        }
+    }
+
+    .contacts {
+        padding: 40px 12px 30px;
+
+        &__name {
+            display: none;
+        }
+
+        &__contact {
+            margin-bottom: 20px;
+        }
+
+        &__contact.contact_phone,
+        &__contact.contact_email {
+            font-size: 18px;
+            line-height: 23px;
+        }
+
+        &__tip {
+            font-size: 12px;
+            line-height: 15px;
+            padding-left: 0;
+            text-align: center;
+
+            &:before {
+                display: none;
+            }
         }
     }
 }
