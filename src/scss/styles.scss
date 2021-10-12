@@ -504,7 +504,13 @@ body {
 }
 
 .link {
-    color: $color-primary;
+    &_primary {
+        color: $color-primary;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .search-field {
@@ -1288,7 +1294,7 @@ body {
 }
 
 .price-list {
-    padding: 0 50px;
+    padding: 50px 50px 0;
 
     &__text {
         margin-top: 20px;

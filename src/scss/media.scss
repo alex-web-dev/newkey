@@ -366,6 +366,11 @@
         line-height: 35px;
     }
 
+    .title2 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
     .logo {
         width: 173px;
     }
@@ -706,6 +711,24 @@
             line-height: 18px;
         }
     }
+
+    .price-list {
+        padding: 25px;
+
+        &__text {
+            text-align: left;
+        }
+    }
+
+    .price-item {
+        &__img {
+            display: none;
+        }
+
+        &__table {
+            margin-left: 0;
+        }
+    }
 }
 
 @media (max-width: 480px) {
@@ -955,6 +978,15 @@
             &:before {
                 display: none;
             }
+        }
+    }
+
+    .price-list {
+        padding: 25px 20px 0;
+
+        &__text {
+            font-size: 14px;
+            line-height: 20px;
         }
     }
 }
