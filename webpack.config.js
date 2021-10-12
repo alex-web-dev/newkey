@@ -52,6 +52,10 @@ const plugins = () => {
       filename: 'autom.html',
       template: 'src/autom.html'
     }),
+		new HTMLWebpackPlugin({
+      filename: 'contacts.html',
+      template: 'src/contacts.html'
+    }),
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
 			patterns: [
