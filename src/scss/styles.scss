@@ -628,12 +628,16 @@ body {
 }
 
 .main {
-    padding-top: 165px;
     flex: 1 1 auto;
 
     &__content {
+        padding: 165px 0 45px;
         background-color: #f3f6f3;
         box-shadow: -20px 20px 40px rgba(224,226,224,.2),20px -20px 40px rgba(224,226,224,.2),-20px -20px 40px rgba(255,255,255,.9),20px 20px 50px rgba(224,226,224,.9),inset 1px 1px 2px rgba(255,255,255,.3),inset -1px -1px 2px rgba(224,226,224,.5);
+    }
+
+    &__categories {
+        margin-top: 50px;
     }
 }
 
@@ -890,7 +894,15 @@ body {
 }
 
 .categories {
-    padding: 50px 50px 0;
+    padding: 0 50px;
+
+    &__name {
+        color: $color-primary;
+        display: inline-block;
+        margin-bottom: 35px;
+        font-size: 32px;
+        line-height: 40px;
+    }
 
     &__btn {
         margin: 50px auto 0;
@@ -934,11 +946,11 @@ body {
     &__name {
         white-space: nowrap;
         color: $color-primary;
+        overflow: hidden;
     }
 
     &__img {
         margin-top: 10px;
-        width: 300px;
         height: 200px;
         object-fit: cover;
     }

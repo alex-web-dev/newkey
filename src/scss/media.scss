@@ -751,6 +751,12 @@
         }
     }
 
+    .main {
+        &__categories {
+            margin-top: 40px;
+        }
+    }
+
     .slides {
         padding: 25px 0 0;
     }
@@ -826,7 +832,14 @@
     }
 
     .categories {
-        padding: 40px 40px 0;
+        padding: 0 40px;
+
+        &__name {
+            font-size: 18px;
+            line-height: 23px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
     }
 
     .category {
