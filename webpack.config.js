@@ -101,7 +101,7 @@ let conf = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '/dist' 
+              publicPath: './' 
             },
           },
 					'css-loader'
@@ -113,7 +113,7 @@ let conf = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '/dist' 
+              publicPath: './' 
             },
           },
 					'css-loader',
@@ -123,10 +123,9 @@ let conf = {
 			{
 				test: /\.(png|jpg|svg|webp)$/,
 				loader: 'url-loader',
-				// loader: 'file-loader',
 				options: { 
 					limit: 2500,
-					// name: 'images/[name].[ext]',
+					name: 'images/[name].[ext]',
 				}
 			},
 			{
