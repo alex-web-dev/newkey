@@ -64,6 +64,10 @@ const plugins = () => {
       filename: 'pricelist.html',
       template: 'src/pricelist.html'
     }),
+		new HTMLWebpackPlugin({
+      filename: 'products.html',
+      template: 'src/products.html'
+    }),
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
 			patterns: [

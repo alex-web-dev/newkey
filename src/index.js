@@ -1,6 +1,7 @@
 
 import './js/sliders';
 import './js/menu';
+import './js/cart';
 
 import '@/scss/styles.scss';
 
