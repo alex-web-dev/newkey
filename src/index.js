@@ -25,7 +25,6 @@ window.addEventListener('resize', () => {
 });
 
 function moveElem(elemClass, fromClass, toClass, width) {
-  
   const $elem = document.querySelector(`.${elemClass}`);
   const $from = document.querySelector(`.${fromClass}`);
   const $to = document.querySelector(`.${toClass}`);

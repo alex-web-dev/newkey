@@ -1429,6 +1429,8 @@ body {
     &__sort-label {
         font-size: 24px;
         user-select: none;
+        display: flex;
+        align-items: center;
 
         &:before {
             content: '';
@@ -1466,11 +1468,19 @@ body {
     background: #e6e6e6;
     padding: 20px 28px 20px 14px;
     border-radius: 10px;
-    width: 1136px;
     transition: all .3s;
 
     &:hover {
         background: #fff;
+    }
+
+    &__img-link {
+        width: 150px;
+        flex: 0 0 auto;
+    }
+
+    &__img {
+        width: 100%;
     }
 
     &__main {
@@ -1544,6 +1554,33 @@ body {
     &__btn {
         width: 140px;
         padding: 9px 15px 10px;
+    }
+
+    &_fly {
+        user-select: none;
+        animation: fadeOut 1s forwards;
+        transition: all .8s;
+        position: fixed;
+        z-index: 8;
+        margin-top: 0;
+
+        &:hover {
+            background: #e6e6e6;
+        }
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
