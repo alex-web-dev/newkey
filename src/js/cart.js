@@ -55,6 +55,27 @@ window.addEventListener('load', () => {
   }
 });
 
+const $cartPopup = document.querySelector('.cart-popup');
+if ($cartPopup) {
+  $cartPopup.addEventListener('click', e => {
+    if (e.target.className === $cartPopup.className) {
+      $cartPopup.classList.add('cart-popup_hide');
+    }
+  });
+
+  const $openPopupBtns = document.querySelectorAll('.open-cart-popup');
+  $openPopupBtns.forEach($btn => {
+    $btn.addEventListener('click', () => {
+      $cartPopup.classList.remove('cart-popup_hide');
+    });
+  });
+
+  const $closePopup = document.querySelector('.cart-popup__close');
+  $closePopup.addEventListener('click', () => {
+    $cartPopup.classList.add('cart-popup_hide');
+  });
+}
+
 
 function updateCartTotal() {
   const $cartSum = document.querySelector('.cart__sum');
