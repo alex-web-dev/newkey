@@ -1,37 +1,88 @@
-const $productDecrementBtns = document.querySelectorAll('.product-item__dec');
-const $productIncrementsBtns = document.querySelectorAll('.product-item__inc');
+window.addEventListener('load', () => {
+  const $productDecrementBtns = document.querySelectorAll('.product-item__dec');
+  const $productIncrementsBtns = document.querySelectorAll('.product-item__inc');
 
-$productDecrementBtns.forEach($btn => {
-  $btn.addEventListener('click', () => {
-    const $product = $btn.closest('.product-item');
-    const $productCountInput = $product.querySelector('.product-item__count-input');
+  $productDecrementBtns.forEach($btn => {
+    $btn.addEventListener('click', () => {
+      const $product = $btn.closest('.product-item');
+      const $productCountInput = $product.querySelector('.product-item__count-input');
 
-    if (+$productCountInput.value <= 1) {
+      if (+$productCountInput.value <= 1) {
+        return;
+      }
+
+      $productCountInput.value = +$productCountInput.value - 1;
+    });
+  });
+
+  $productIncrementsBtns.forEach($btn => {
+    $btn.addEventListener('click', () => {
+      const $product = $btn.closest('.product-item');
+      const $productCountInput = $product.querySelector('.product-item__count-input');
+
+      $productCountInput.value = +$productCountInput.value + 1;
+    });
+  });
+
+  const $productCartBtns = document.querySelectorAll('.product-item__btn');
+  $productCartBtns.forEach($btn => {
+    $btn.addEventListener('click', () => {
+      const $product = $btn.closest('.product-item');
+      const $cartBtn = document.querySelector('.header__cart-btn');
+
+      moveToCart($product, $cartBtn);
+    });
+  });
+
+  const $cart = document.querySelector('.cart');
+  if ($cart) {
+    updateCartTotal();
+
+    const $cartUpdateBtns = document.querySelectorAll('.cart-update-total');
+    $cartUpdateBtns.forEach($btn => {
+      $btn.addEventListener('click', () => {
+        setTimeout(() => {
+          updateCartTotal();
+        });
+      });
+    });
+
+    const $cartSelectAll = document.querySelector('.cart-select-all');
+    $cartSelectAll.addEventListener('click', () => {
+      const $cartProductsChecboxes = document.querySelectorAll('.product-item__checkbox .checkbox__input');
+      $cartProductsChecboxes.forEach($checkbox => $checkbox.checked = $cartSelectAll.checked);
+    });
+  }
+});
+
+
+function updateCartTotal() {
+  const $cartSum = document.querySelector('.cart__sum');
+  const $cartDiscount = document.querySelector('.cart__discount');
+  const $cartTotal = document.querySelector('.cart__total');
+
+  const $cartItems = document.querySelectorAll('.cart__item');
+  let sum = 0;
+  let discount = 0;
+  $cartItems.forEach($item => {
+    const itemSelect = $item.querySelector('.checkbox__input').checked;
+    if (!itemSelect) {
       return;
     }
 
-    $productCountInput.value = +$productCountInput.value - 1;
+    const itemPrice = +$item.dataset.price;
+    const itemCount = +$item.querySelector('.product-item__count-input').value;
+    
+    sum += itemPrice * itemCount;
+    discount += +$item.dataset.discount * itemCount;
   });
-});
 
-$productIncrementsBtns.forEach($btn => {
-  $btn.addEventListener('click', () => {
-    const $product = $btn.closest('.product-item');
-    const $productCountInput = $product.querySelector('.product-item__count-input');
-
-    $productCountInput.value = +$productCountInput.value + 1;
-  });
-});
-
-const $productCartBtns = document.querySelectorAll('.product-item__btn');
-$productCartBtns.forEach($btn => {
-  $btn.addEventListener('click', () => {
-    const $product = $btn.closest('.product-item');
-    const $cartBtn = document.querySelector('.header__cart-btn');
-
-    moveToCart($product, $cartBtn);
-  });
-});
+  const total = sum - discount;
+  
+  $cartSum.innerHTML = `${sum} ₽`;
+  $cartDiscount.innerHTML = `${discount} ₽`;
+  $cartTotal.innerHTML = `${total} ₽`;
+}
 
 function moveToCart($item, $cart) {
   const itemPosition = $item.getBoundingClientRect();
