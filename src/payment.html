@@ -39,7 +39,7 @@
 								<span>newkey</span>
 							</a>
 							<button class="btn header__btn btn-callback-popup">Оставить заявку</button>
-							<button class="cart-btn header__cart-btn"></button>
+							<button class="cart-btn header__cart-btn open-cart-popup"></button>
 						</div>
 					</div>
 				</div>
@@ -327,22 +327,22 @@
 		<div class="popup-callback popup-callback_hide">
 			<div class="popup-callback__content">
 				<form class="cb-form">
-					<label for="name" class="cb-form__label">Имя</label>
-					<input type="text" class="cb-form__field" id="name">
-					<label for="name" class="cb-form__label">Телефон</label>
-					<input type="text" class="cb-form__field" id="phone">
-					<label for="name" class="cb-form__label">E-mail</label>
-					<input type="text" class="cb-form__field" id="email">
-					<label for="comment" class="cb-form__label">Комментарий к заявке</label>
-					<textarea id="comment" class="cb-form__field cb-form__field_area" cols="30" rows="10" ></textarea>
+					<label for="popup-name" class="form-label">Имя</label>
+					<input type="text" class="form-field" id="popup-name" required>
+					<label for="popup-phone" class="form-label">Телефон</label>
+					<input type="text" class="form-field" id="popup-phone" required>
+					<label for="popup-email" class="form-label">E-mail</label>
+					<input type="text" class="form-field" id="popup-email" required>
+					<label for="popup-comment" class="form-label">Комментарий к заявке</label>
+					<textarea id="popup-comment" class="form-field form-field_area" cols="30" rows="10"  required></textarea>
 					<div class="file-btn cb-form__file">
-						<input type="file" class="file-btn__input" id="file">
-						<label for="file" class="text file-btn__label">Прикрепить файл</label>
+						<input type="file" class="file-btn__input" id="popup-file">
+						<label for="popup-file" class="text file-btn__label">Прикрепить файл</label>
 					</div>
-					<div class="cb-form__privacy">
-						<input type="checkbox" id="privacy" class="cb-form__privacy-input">
-						<label class="cb-form__privacy-label" for="privacy">
-							<p class="cb-form__privacy-text">
+					<div class="checkbox cb-form__privacy">
+						<input type="checkbox" id="privacy" class="checkbox__input">
+						<label class="checkbox__label" for="privacy">
+							<p class="form-privacy-text">
 								Отправляя сообщение, я подтверждаю согласие на
 								<a href="#">обработку и хранение моих персональных данных</a>
 							</p>
@@ -352,6 +352,84 @@
 				</form>
 			</div>
 			<div class="close popup-callback__close"></div>
+		</div>
+		<div class="cart-popup cart-popup_hide">
+			<div class="container">
+				<div class="cart-popup__content">
+					<div class="cart-popup__title">Товары в корзине</div>
+					<div class="product-list cart-popup__list">
+						<div class="product-item cart-popup__item" data-price="2921" data-discount="87">
+							<a href="#" class="product-item__img-link">
+								<img src="images/products/1.png" class="product-item__img">
+							</a>
+							<div class="product-item__main">
+								<h3 class="product-item__name">
+									<a href="#" class="link link_primary">Фильтр фланцевый Y-тип нержавеющий, AISI304 DN15 (1/2"), (CF8), PN16</a>
+								</h3>
+							</div>
+							<div class="product-item__controls">
+								<div class="product-item__counter">
+									<div class="product-item__counter-form">
+										<button type="button" class="product-item__dec cart-update-total">-</button>
+										<input type="text" class="product-item__count-input" value="1">
+										<button type="button" class="product-item__inc cart-update-total">+</button>
+									</div>
+								</div>
+								<button class="product-item__delete"></button>
+							</div>
+							<div class="product-item__price">Стоимость:<span>2 921 ₽</span></div>
+						</div>
+						<div class="product-item cart-popup__item" data-price="2921" data-discount="87">
+							<a href="#" class="product-item__img-link">
+								<img src="images/products/1.png" class="product-item__img">
+							</a>
+							<div class="product-item__main">
+								<h3 class="product-item__name">
+									<a href="#" class="link link_primary">Фильтр фланцевый Y-тип нержавеющий, AISI304 DN15 (1/2"), (CF8), PN16</a>
+								</h3>
+							</div>
+							<div class="product-item__controls">
+								<div class="product-item__counter">
+									<div class="product-item__counter-form">
+										<button type="button" class="product-item__dec cart-update-total">-</button>
+										<input type="text" class="product-item__count-input" value="1">
+										<button type="button" class="product-item__inc cart-update-total">+</button>
+									</div>
+								</div>
+								<button class="product-item__delete"></button>								
+							</div>
+							<div class="product-item__price">Стоимость:<span>2 921 ₽</span></div>
+						</div>
+						<div class="product-item cart-popup__item" data-price="2921" data-discount="87">
+							<a href="#" class="product-item__img-link">
+								<img src="images/products/1.png" class="product-item__img">
+							</a>
+							<div class="product-item__main">
+								<h3 class="product-item__name">
+									<a href="#" class="link link_primary">Фильтр фланцевый Y-тип нержавеющий, AISI304 DN15 (1/2"), (CF8), PN16</a>
+								</h3>
+							</div>
+							<div class="product-item__controls">
+								<div class="product-item__counter">
+									<div class="product-item__counter-form">
+										<button type="button" class="product-item__dec cart-update-total">-</button>
+										<input type="text" class="product-item__count-input" value="1">
+										<button type="button" class="product-item__inc cart-update-total">+</button>
+									</div>
+								</div>
+								<button class="product-item__delete"></button>								
+							</div>
+							<div class="product-item__price">Стоимость:<span>2 921 ₽</span></div>
+						</div>
+					</div>
+					<div class="cart-popup__footer">
+						<div class="cart-popup__discount">Скидка:<span>231 ₽</span></div>
+						<div class="cart-popup__total">Итого:<span>7 477 ₽</span></div>
+					</div>
+					<a href="cart.html" class="btn btn_big cart-popup__btn">Перейти в корзину</a>
+					<button class="close cart-popup__close"></button>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
