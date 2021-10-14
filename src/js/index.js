@@ -1,7 +1,8 @@
 
-import './js/sliders';
-import './js/menu';
-import './js/cart';
+import './sliders';
+import './menu';
+import './cart';
+import './callback-popup';
 
 import '@/scss/styles.scss';
 

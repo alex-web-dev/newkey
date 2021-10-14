@@ -68,6 +68,18 @@ const plugins = () => {
       filename: 'products.html',
       template: 'src/products.html'
     }),
+		new HTMLWebpackPlugin({
+      filename: 'payment.html',
+      template: 'src/payment.html'
+    }),
+		new HTMLWebpackPlugin({
+      filename: 'about.html',
+      template: 'src/about.html'
+    }),
+		new HTMLWebpackPlugin({
+      filename: 'cart.html',
+      template: 'src/cart.html'
+    }),
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
 			patterns: [
@@ -92,7 +104,7 @@ const plugins = () => {
 const filename = ext => isDev ? `[name].${ext}` : `[name].[fullhash].${ext}`;
 
 let conf = {
-	entry: ['@babel/polyfill', './src/index.js'],
+	entry: ['@babel/polyfill', './src/js/index.js'],
 	output: {
 		filename: filename('js'),
 		path: path.resolve(__dirname, './dist')
