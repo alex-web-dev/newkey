@@ -1218,6 +1218,11 @@
     }
 
     .cart-popup {
+        &__title {
+            font-size: 26px;
+            text-align: left;
+        }
+
         &__content {
             padding: 15px;
             margin-top: 65px;
@@ -1236,6 +1241,11 @@
         &__total {
             font-size: 30px;
             width: 240px;
+        }
+
+        &__close {
+            right: 15px;
+            top: 28px;
         }
     }
 }
