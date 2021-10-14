@@ -38,7 +38,7 @@
 								</svg>
 								<span>newkey</span>
 							</a>
-							<button class="btn header__btn">Оставить заявку</button>
+							<button class="btn header__btn btn-callback-popup">Оставить заявку</button>
 							<button class="cart-btn header__cart-btn"></button>
 						</div>
 					</div>
@@ -53,7 +53,7 @@
 											<img src="images/logo.svg" alt="">
 										</a>
 										<button class="cart-btn menu__cart-btn"><span>Корзина (5)</span></button>
-										<button class="menu__close"></button>
+										<button class="close menu__close"></button>
 									</div>
 									<form class="search-field menu__search">
 										<input type="text" class="search-field__input">
@@ -179,14 +179,14 @@
 											</div>
 										</div>
 									</li>
-									<li class="menu__item"><a class="link menu__link" href="#" data-text="О компании">О компании</a></li>
-									<li class="menu__item"><a class="link menu__link" href="#" data-text="Полезное">Полезное</a></li>
-									<li class="menu__item"><a class="link menu__link" href="#" data-text="Оплата и доставка">Оплата и доставка</a></li>
-									<li class="menu__item"><a class="link menu__link" href="contacts.html" data-text="Контакты">Контакты</a></li>
+									<li class="menu__item"><a class="link menu__link" href="about.html">О компании</a></li>
+									<li class="menu__item"><a class="link menu__link" href="#">Полезное</a></li>
+									<li class="menu__item"><a class="link menu__link" href="payment.html">Оплата и доставка</a></li>
+									<li class="menu__item"><a class="link menu__link" href="contacts.html">Контакты</a></li>
 									<div class="menu__footer">
 										<a href="tel:+78124490076" class="menu__phone">+7 (812) 449-00-76</a>
 										<div class="menu__worktime">Пн-пт: с 9.00 до 17.00</div>
-										<button class="btn menu__btn">Оставить заявку</button>
+										<button class="btn menu__btn btn-callback-popup">Оставить заявку</button>
 									</div>
 								</ul>
 								<button class="menu__toggle">
@@ -302,7 +302,7 @@
 									<a href="pricelist.html" class="footer-menu__link">Прайслист</a>
 								</div>
 								<div class="footer-menu__item">
-									<a href="#" class="footer-menu__link">Оплата и доставка</a>
+									<a href="payment.html" class="footer-menu__link">Оплата и доставка</a>
 								</div>
 								<div class="footer-menu__item">
 									<a href="#" class="footer-menu__link">Документация</a>
@@ -351,5 +351,34 @@
 				</div>
 			</div>
 		</footer>
+		<div class="popup-callback popup-callback_hide">
+			<div class="popup-callback__content">
+				<form class="cb-form">
+					<label for="name" class="cb-form__label">Имя</label>
+					<input type="text" class="cb-form__field" id="name">
+					<label for="name" class="cb-form__label">Телефон</label>
+					<input type="text" class="cb-form__field" id="phone">
+					<label for="name" class="cb-form__label">E-mail</label>
+					<input type="text" class="cb-form__field" id="email">
+					<label for="comment" class="cb-form__label">Комментарий к заявке</label>
+					<textarea id="comment" class="cb-form__field cb-form__field_area" cols="30" rows="10" ></textarea>
+					<div class="file-btn cb-form__file">
+						<input type="file" class="file-btn__input" id="file">
+						<label for="file" class="text file-btn__label">Прикрепить файл</label>
+					</div>
+					<div class="cb-form__privacy">
+						<input type="checkbox" id="privacy" class="cb-form__privacy-input">
+						<label class="cb-form__privacy-label" for="privacy">
+							<p class="cb-form__privacy-text">
+								Отправляя сообщение, я подтверждаю согласие на
+								<a href="#">обработку и хранение моих персональных данных</a>
+							</p>
+						</label>
+					</div>
+					<button type="submit" class="btn cb-form__submit">Перезвоните мне</button>
+				</form>
+			</div>
+			<div class="close popup-callback__close"></div>
+		</div>
 	</body>
 </html>
