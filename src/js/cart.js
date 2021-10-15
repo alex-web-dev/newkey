@@ -1,11 +1,11 @@
 window.addEventListener('load', () => {
-  const $productDecrementBtns = document.querySelectorAll('.product-item__dec');
-  const $productIncrementsBtns = document.querySelectorAll('.product-item__inc');
+  const $productDecrementBtns = document.querySelectorAll('.counter-form__dec');
+  const $productIncrementsBtns = document.querySelectorAll('.counter-form__inc');
 
   $productDecrementBtns.forEach($btn => {
     $btn.addEventListener('click', () => {
       const $product = $btn.closest('.product-item');
-      const $productCountInput = $product.querySelector('.product-item__count-input');
+      const $productCountInput = $product.querySelector('.counter-form__input');
 
       if (+$productCountInput.value <= 1) {
         return;
@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
   $productIncrementsBtns.forEach($btn => {
     $btn.addEventListener('click', () => {
       const $product = $btn.closest('.product-item');
-      const $productCountInput = $product.querySelector('.product-item__count-input');
+      const $productCountInput = $product.querySelector('.counter-form__input');
 
       $productCountInput.value = +$productCountInput.value + 1;
     });
@@ -81,6 +81,8 @@ function updateCartTotal() {
   const $cartSum = document.querySelector('.cart__sum');
   const $cartDiscount = document.querySelector('.cart__discount');
   const $cartTotal = document.querySelector('.cart__total');
+  const $cartPopupDiscount = document.querySelector('.cart-popup__discount span')
+  const $cartPopupTotal = document.querySelector('.cart-popup__total span')
 
   const $cartItems = document.querySelectorAll('.cart__item');
   let sum = 0;
@@ -92,7 +94,7 @@ function updateCartTotal() {
     }
 
     const itemPrice = +$item.dataset.price;
-    const itemCount = +$item.querySelector('.product-item__count-input').value;
+    const itemCount = +$item.querySelector('.counter-form__input').value;
     
     sum += itemPrice * itemCount;
     discount += +$item.dataset.discount * itemCount;
@@ -103,6 +105,8 @@ function updateCartTotal() {
   $cartSum.innerHTML = `${sum} ₽`;
   $cartDiscount.innerHTML = `${discount} ₽`;
   $cartTotal.innerHTML = `${total} ₽`;
+  $cartPopupDiscount.innerHTML = `${discount} ₽`;
+  $cartPopupTotal.innerHTML = `${total} ₽`;
 }
 
 function moveToCart($item, $cart) {
@@ -118,9 +122,10 @@ function moveToCart($item, $cart) {
   $itemClone.style.left = `${itemPosition['x']}px`;
   $itemClone.style.top = `${itemPosition['y']}px`;
 
-  const additionYOffset = window.innerWidth > 992 ? 55 : 140;
+  const additionYOffset = window.innerWidth > 992 ? 55 : 160;
+  const additionXOffset = window.innerWidth > 992 ? 0 : 20;
 
-  const itemXStart = itemPosition['x'] + 0.5 * itemPosition['width'];
+  const itemXStart = itemPosition['x'] + 0.5 * itemPosition['width'] + additionXOffset;
   const itemYStart = itemPosition['y'] + additionYOffset;
 
   const itemXEnd = (cartPosition['x'] + 0.5 * cartPosition['width']) - itemXStart;
@@ -134,5 +139,5 @@ function moveToCart($item, $cart) {
     $itemClone.style.transform += "scale(0.02)";
   });
 
-  setTimeout(() => document.body.removeChild($itemClone), 750);
+  setTimeout(() => document.body.removeChild($itemClone), 11750);
 }

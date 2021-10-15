@@ -16,6 +16,10 @@ body {
     margin: 0;
     color: $color-text;
     font-weight: 700;
+
+    &_primary {
+        color: $color-primary;
+    }
 }
 
 .title1 {
@@ -29,10 +33,6 @@ body {
     font-size: 44px;
     line-height: 56px;
     text-align: center;
-
-    &_primary {
-        color: $color-primary;
-    }
 }
 
 .title3 {
@@ -1542,40 +1542,6 @@ body {
         margin-top: 20px;
     }
 
-    &__counter-form {
-        display: flex;
-    }
-
-    &__dec,
-    &__inc,
-    &__count-input {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 40px;
-        background: #fff;
-        color: $color-primary;
-        text-align: center;
-    }
-
-    &__dec,
-    &__inc {
-        font-size: 30px;
-        width: 40px;
-        padding-bottom: 5px;
-        font-weight: 700;
-        border: 1px solid #dadada;
-        cursor: pointer;
-    }
-
-    &__count-input {
-        font-size: 20px;
-        width: 60px;
-        border: none;
-        border-top: 1px solid #dadada;
-        border-bottom: 1px solid #dadada;
-    }
-
     &__counter-value {
         font-size: 12px;
         margin-top: 6px;
@@ -1584,17 +1550,6 @@ body {
     &__btn {
         width: 140px;
         padding: 9px 15px 10px;
-    }
-
-    &__delete {
-        background: url('../images/icons/trash.svg') center center no-repeat;
-        background-size: contain;
-        width: 24px;
-        height: 25px;
-        border: none;
-        padding: 0;
-        flex: 0 0 auto;
-        cursor: pointer;
     }
 
     &__checkbox {
@@ -1617,6 +1572,51 @@ body {
         &:hover {
             background: #e6e6e6;
         }
+    }
+}
+
+.btn-delete {
+    background: url('../images/icons/trash.svg') center center no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 25px;
+    border: none;
+    padding: 0;
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.counter-form {
+    display: flex;
+
+    &__dec,
+    &__inc,
+    &__input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        background: #fff;
+        color: $color-primary;
+        text-align: center;
+    }
+
+    &__dec,
+    &__inc {
+        font-size: 30px;
+        width: 40px;
+        padding-bottom: 5px;
+        font-weight: 700;
+        border: 1px solid #dadada;
+        cursor: pointer;
+    }
+
+    &__input {
+        font-size: 20px;
+        width: 60px;
+        border: none;
+        border-top: 1px solid #dadada;
+        border-bottom: 1px solid #dadada;
     }
 }
 
@@ -1890,6 +1890,61 @@ body {
 
     &_hide {
         display: none;
+    }
+}
+
+.product {
+    padding: 40px 50px 0;
+
+    &__main {
+        padding: 18px 25px 27px;
+    }
+
+    &__title2 {
+        font-size: 38px;
+        line-height: 46px;
+        text-align: left;
+    }
+
+    &__details {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__detail {
+        display: flex;
+        margin-top: 10px;
+
+        span {
+            display: block;
+            width: 50%;
+
+            &:first-child {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__price {
+        font-size: 26px;
+        color: $color-primary;
+        font-weight: 700;
+        margin-top: 20px;
+    }
+
+    &__discount {
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    &__controls {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__counter {
+        margin-right: 20px;
     }
 }
 

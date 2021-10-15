@@ -668,7 +668,6 @@
 
     .product-item {
         justify-content: center;
-        position: relative;
 
         &__img-link {
             width: 150px;
@@ -693,10 +692,10 @@
 
     .cart {
         &__item {
-            .product-item {
-                &__main {
-                    margin-left: 0;
-                }
+            position: relative;
+
+            .product-item__main {
+                margin-left: 0;
             }
         }
     }
@@ -857,6 +856,12 @@
     .products {
         &__bg {
             margin-right: auto;
+        }
+
+        &__item {
+            .product-item__btn {
+                margin-top: 20px;
+            }
         }
     }
 
