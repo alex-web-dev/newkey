@@ -1575,7 +1575,7 @@ body {
 
     &_fly {
         user-select: none;
-        animation: fadeOut 1s forwards;
+        // animation: fadeOut 1s forwards;
         transition: all .8s;
         position: fixed;
         z-index: 8;
@@ -2121,6 +2121,7 @@ body {
         max-height: 300px;
         margin: 0 auto;
         display: block;
+        cursor: pointer;
     }
 
     &__controls {
