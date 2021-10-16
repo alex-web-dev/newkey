@@ -80,6 +80,10 @@ const plugins = () => {
       filename: 'cart.html',
       template: 'src/cart.html'
     }),
+		new HTMLWebpackPlugin({
+      filename: 'product.html',
+      template: 'src/product.html'
+    }),
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
 			patterns: [

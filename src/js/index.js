@@ -2,7 +2,9 @@
 import './sliders';
 import './menu';
 import './cart';
+import './popups';
 import './callback-popup';
+import './product';
 
 import '@/scss/styles.scss';
 

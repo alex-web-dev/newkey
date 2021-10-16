@@ -1,26 +1,26 @@
 window.addEventListener('load', () => {
-  const $productDecrementBtns = document.querySelectorAll('.product-item__dec');
-  const $productIncrementsBtns = document.querySelectorAll('.product-item__inc');
+  const $productDecrementBtns = document.querySelectorAll('.counter-form__dec');
+  const $productIncrementsBtns = document.querySelectorAll('.counter-form__inc');
 
   $productDecrementBtns.forEach($btn => {
     $btn.addEventListener('click', () => {
-      const $product = $btn.closest('.product-item');
-      const $productCountInput = $product.querySelector('.product-item__count-input');
+      const $counter = $btn.closest('.counter-form');
+      const $countInput = $counter.querySelector('.counter-form__input');
 
-      if (+$productCountInput.value <= 1) {
+      if (+$countInput.value <= 1) {
         return;
       }
 
-      $productCountInput.value = +$productCountInput.value - 1;
+      $countInput.value = +$countInput.value - 1;
     });
   });
 
   $productIncrementsBtns.forEach($btn => {
     $btn.addEventListener('click', () => {
-      const $product = $btn.closest('.product-item');
-      const $productCountInput = $product.querySelector('.product-item__count-input');
+      const $counter = $btn.closest('.counter-form');
+      const $countInput = $counter.querySelector('.counter-form__input');
 
-      $productCountInput.value = +$productCountInput.value + 1;
+      $countInput.value = +$countInput.value + 1;
     });
   });
 
@@ -31,6 +31,18 @@ window.addEventListener('load', () => {
       const $cartBtn = document.querySelector('.header__cart-btn');
 
       moveToCart($product, $cartBtn);
+    });
+  });
+
+  const $cardBtns = document.querySelectorAll('.product__buy-btn, .product__cart-btn');
+  
+  $cardBtns.forEach($btn => {
+    $btn.addEventListener('click', () => {
+      const $product = $btn.closest('.product');
+      const $activeImg = $product.querySelector('.swiper-slide-active .product-slider__img');
+      const $cartBtn = document.querySelector('.header__cart-btn');
+
+      moveToCart($activeImg, $cartBtn);
     });
   });
 
@@ -81,6 +93,8 @@ function updateCartTotal() {
   const $cartSum = document.querySelector('.cart__sum');
   const $cartDiscount = document.querySelector('.cart__discount');
   const $cartTotal = document.querySelector('.cart__total');
+  const $cartPopupDiscount = document.querySelector('.cart-popup__discount span')
+  const $cartPopupTotal = document.querySelector('.cart-popup__total span')
 
   const $cartItems = document.querySelectorAll('.cart__item');
   let sum = 0;
@@ -92,7 +106,7 @@ function updateCartTotal() {
     }
 
     const itemPrice = +$item.dataset.price;
-    const itemCount = +$item.querySelector('.product-item__count-input').value;
+    const itemCount = +$item.querySelector('.counter-form__input').value;
     
     sum += itemPrice * itemCount;
     discount += +$item.dataset.discount * itemCount;
@@ -103,6 +117,8 @@ function updateCartTotal() {
   $cartSum.innerHTML = `${sum} ₽`;
   $cartDiscount.innerHTML = `${discount} ₽`;
   $cartTotal.innerHTML = `${total} ₽`;
+  $cartPopupDiscount.innerHTML = `${discount} ₽`;
+  $cartPopupTotal.innerHTML = `${total} ₽`;
 }
 
 function moveToCart($item, $cart) {
@@ -111,20 +127,15 @@ function moveToCart($item, $cart) {
   
   const $itemClone = $item.cloneNode(true);
   $itemClone.classList.add('product-item_fly');
-  $itemClone.querySelectorAll('.product-list-item-props, .product-item__btn, .product-item__counter')
+  $itemClone.querySelectorAll('.product-list-item-props, .product-item__btn')
     .forEach($elem => $elem.remove());
 
   $itemClone.style.width = `${$item.offsetWidth}px`;
   $itemClone.style.left = `${itemPosition['x']}px`;
   $itemClone.style.top = `${itemPosition['y']}px`;
 
-  const additionYOffset = window.innerWidth > 992 ? 55 : 140;
-
-  const itemXStart = itemPosition['x'] + 0.5 * itemPosition['width'];
-  const itemYStart = itemPosition['y'] + additionYOffset;
-
-  const itemXEnd = (cartPosition['x'] + 0.5 * cartPosition['width']) - itemXStart;
-  const itemYEnd = (cartPosition['y']) - itemYStart;
+  const itemXEnd = -itemPosition['x'] - 0.5 * $item.offsetWidth + cartPosition['x'] + $cart.offsetWidth * 0.5;
+  const itemYEnd = -itemPosition['y'] - 0.5 * $item.offsetHeight + cartPosition['y'] + $cart.offsetHeight * 0.5;
 
   document.body.appendChild($itemClone);  
 
