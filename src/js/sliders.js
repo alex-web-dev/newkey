@@ -49,3 +49,57 @@ if ($slides) {
     slidesCurrent.innerHTML = '0' + currentSlide;
   });
 }
+
+
+new Swiper('.product-slider__main', {
+  direction: 'horizontal',
+  pagination: {
+    el: '.product-slider__pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.product-slider__next',
+    prevEl: '.product-slider__prev',
+  },
+  breakpoints: {
+  }
+});
+
+new Swiper('.product__recommend-slider', {
+  direction: 'horizontal',
+  slidesPerView: 1,
+  spaceBetween: 55,
+  watchOverflow: false,
+  navigation: {
+    nextEl: '.product__recommend-next',
+    prevEl: '.product__recommend-prev',
+  },
+  breakpoints: {
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    }
+  }
+});
+
+new Swiper('.product__simular-slider', {
+  direction: 'horizontal',
+  slidesPerView: 1,
+  spaceBetween: 30,
+  watchOverflow: false,
+  breakpoints: {
+    1200: {
+      direction: 'vertical',
+      watchOverflow: false,
+      slidesPerView: 3,
+    },
+    768: {
+      direction: 'horizontal',
+      slidesPerView: 2,
+    }
+  }
+});
