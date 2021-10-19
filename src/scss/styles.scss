@@ -943,6 +943,10 @@ body {
 .categories {
     padding: 0 50px;
 
+    &__title2 {
+        margin-bottom: 45px;
+    }
+
     &__name {
         color: $color-primary;
         display: inline-block;

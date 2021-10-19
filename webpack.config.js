@@ -84,6 +84,14 @@ const plugins = () => {
       filename: 'product.html',
       template: 'src/product.html'
     }),
+		new HTMLWebpackPlugin({
+      filename: 'layout.html',
+      template: 'src/layout.html'
+    }),
+		new HTMLWebpackPlugin({
+      filename: 'guide.html',
+      template: 'src/guide.html'
+    }),
 		new CleanWebpackPlugin(),
 		new CopyWebpackPlugin({
 			patterns: [
